@@ -9,3 +9,12 @@ pipeline {
         }
     }
 }
+Stage('ssh deploy')
+ {
+     steps
+     {
+         sshagent(credentials:['cr'])
+         sh 'ssh -o StrictHostkeyGhecking=no root@192.168.112.132  uptime'
+         
+     }
+ }
