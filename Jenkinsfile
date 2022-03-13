@@ -13,7 +13,7 @@ Stage('ssh deploy')
  {
      steps
      {
-         sshagent(credentials:['cr'])
+         sshagent(credentials:['root'])
          sh 'ssh -o StrictHostkeyGhecking=no root@192.168.112.132  uptime'
          
      }
